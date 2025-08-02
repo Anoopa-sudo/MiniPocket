@@ -1,0 +1,138 @@
+<?php
+
+include('../config.php');
+session_start();
+if (!isset($_SESSION["admin"]))
+    header("location: index.php");
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Mini Pocket App - Admin</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Mini Pocket ADMIN</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class=""><a class="" href="check-users.php" style="color: #fff; font-weight: bold">Manage Users</a></li>
+                <li class=""><a class="" href="check-movies.php" style="color: #fff; font-weight: bold">Manage Theatres &amp; Movies</a></li>
+                <li class=""><a class="" href="check-supermarkets.php" style="color: #fff; font-weight: bold">Manage Supermarkets</a></li>
+                <li class=""><a class="" href="check-services.php" style="color: #fff; font-weight: bold">Manage Services</a></li>
+                <li class=""><a class="" href="check-hospitals.php" style="color: #fff; font-weight: bold">Manage Hospitals</a></li>
+                <li class="active"><a class="" href="check-vacancies.php" style="color: #fff; font-weight: bold">Manage Vacancies</a></li>
+                <li class=""><a class="" href="check-directory.php" style="color: #fff; font-weight: bold">Manage Directory</a></li>
+                <li class=""><a class="" href="check-accomodation.php" style="color: #fff; font-weight: bold">Manage Accomodation</a></li>
+                <li class=""><a class="" href="check-enquiries.php" style="color: #fff; font-weight: bold">Check Enquires</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="admin-logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container regs-con">
+
+        <h1>Available Vacancies</h1>
+        <table class="table table-bordered" id="vacancies-table">
+            <tr>
+                <th>ID</th>
+                <th>Job Post</th>
+                <th>Company Name</th>
+                <th>Location</th>
+                <th>Salary</th>
+                <th>Description</th>
+                <th>Company Email</th>
+                <th>Applications</th>
+            </tr>
+            <?php
+            // Retrieve data from the database
+            $sql = "SELECT id, job_post, company_name, location, salary, description, company_email FROM vacancies";
+            $result = mysqli_query($conn, $sql);
+
+            // Output data into the table
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>" . $row['id'] . "</td>";
+                echo "<td>" . $row['job_post'] . "</td>";
+                echo "<td>" . $row['company_name'] . "</td>";
+                echo "<td>" . $row['location'] . "</td>";
+                echo "<td>" . $row['salary'] . "</td>";
+                echo "<td>" . $row['description'] . "</td>";
+                echo "<td>" . $row['company_email'] . "</td>";
+                echo "<td><a href='check-vacancy-applications.php?id=" . $row['id'] . "'>View</a></td>";
+
+                echo "</tr>";
+            }
+            ?>
+
+        </table>
+
+        <hr>
+
+        <div class="container regs-con">
+            <h1>Add New Job Vacancy Record</h1>
+            <form method="POST" action="add-vacancy.php">
+                <div class="form-group">
+                    <label for="job_post">Job Post:</label>
+                    <input type="text" class="form-control" name="job_post" id="job_post" required>
+                </div>
+                <div class="form-group">
+                    <label for="company_name">Company Name:</label>
+                    <input type="text" class="form-control" name="company_name" id="company_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" class="form-control" name="location" id="location" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="salary">Salary:</label>
+                    <input type="text" class="form-control" name="salary" id="salary" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea class="form-control" name="description" id="description" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="company_email">Company Email:</label>
+                    <input type="email" class="form-control" name="company_email" id="company_email" required>
+                </div>
+
+                <br>
+                <button type="submit" class="btn btn-primary">Add Vacancy</button>
+            </form>
+        </div>
+
+
+
+    </div>
+
+    <footer id="footer">
+        <p>&copy; Mini Pocket App</p>
+    </footer>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
