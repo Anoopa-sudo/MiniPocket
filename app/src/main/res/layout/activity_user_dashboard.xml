@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserDashboard">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="40dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/userbt"
+                        android:src="@drawable/ic_baseline_account_box_24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/logoutBt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:backgroundTint="@color/blue_app"
+                        android:text="Logout"
+                        android:textColor="#fff" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginVertical="40dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:text="BROWSE SERVICES"
+                    android:textSize="15dp"
+                    android:letterSpacing="0.4"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginVertical="20dp"
+                        android:background="@drawable/bordercircle_grey"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_baseline_local_hospital_24"
+                            android:background="@drawable/border"
+                            android:onClick="handleButtonClick"
+                            android:tag="Hospitals" />
+                            />
+
+                        <TextView
+                            android:id="@+id/t1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="10dp"
+                            android:text="Hospitals"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginVertical="20dp"
+                        android:background="@drawable/bordercircle_grey"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_baseline_storefront_24"
+                            android:background="@drawable/border"
+                            android:onClick="handleButtonClick"
+                            android:tag="Supermarkets" />
+                            />
+
+                        <TextView
+                            android:id="@+id/t2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="10dp"
+                            android:text="Supermarkets"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginVertical="20dp"
+                        android:background="@drawable/bordercircle_grey"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_baseline_house_24"
+                            android:background="@drawable/border"
+                            android:onClick="handleButtonClick"
+                            android:tag="Accomodation" />
+                            />
+
+                        <TextView
+                            android:id="@+id/t3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="10dp"
+                            android:text="Accomodation"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginVertical="20dp"
+                        android:background="@drawable/bordercircle_grey"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_baseline_movie_filter_24"
+                            android:background="@drawable/border"
+                            android:onClick="handleButtonClick"
+                            android:tag="Cinemas" />
+                            />
+
+                        <TextView
+                            android:id="@+id/t4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="10dp"
+                            android:text="Cinemas"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginVertical="20dp"
+                        android:background="@drawable/bordercircle_grey"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_baseline_home_repair_service_24"
+                            android:background="@drawable/border"
+                            android:onClick="handleButtonClick"
+                            android:tag="Maintenance" />
+                            />
+
+                        <TextView
+                            android:id="@+id/t5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="10dp"
+                            android:text="Maintenance"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginVertical="20dp"
+                        android:background="@drawable/bordercircle_grey"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_baseline_work_24"
+                            android:background="@drawable/border"
+                            android:onClick="handleButtonClick"
+                            android:tag="Vacancies" />
+                            />
+
+                        <TextView
+                            android:id="@+id/t6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="10dp"
+                            android:text="Vacancies"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginVertical="20dp"
+                        android:background="@drawable/bordercircle_grey"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_baseline_menu_book_24"
+                            android:background="@drawable/border"
+                            android:onClick="handleButtonClick"
+                            android:tag="Directory" />
+                            />
+
+                        <TextView
+                            android:id="@+id/t7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="10dp"
+                            android:text="Directory"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginVertical="20dp"
+                        android:background="@drawable/bordercircle_grey"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_baseline_help_center_24"
+                            android:background="@drawable/border"
+                            android:onClick="handleButtonClick"
+                            android:tag="Enquiry" />
+                            />
+
+                        <TextView
+                            android:id="@+id/t8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="10dp"
+                            android:text="Enquiry"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

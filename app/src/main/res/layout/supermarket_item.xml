@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:layout_margin="20dp"
+    android:background="@drawable/bordercircle_grey"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_baseline_storefront_24" />
+
+    <TextView
+        android:id="@+id/namet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Supermarket Name"
+        android:textColor="@color/teal_700"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/i1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_baseline_location_on_24"
+            android:tag="hospitals" />
+        <TextView
+            android:id="@+id/loct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="London"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mapbt"
+        android:text="View on Map"
+        android:drawableLeft="@drawable/ic_baseline_map_24"
+        android:backgroundTint="@color/red_app"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/i2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_baseline_contact_phone_24"
+            android:tag="hospitals" />
+
+        <TextView
+            android:id="@+id/phonet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:text="+1 123 45684"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:background="@color/teal_700"></LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/i3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_baseline_access_time_24"
+            android:tag="hospitals" />
+
+        <TextView
+            android:id="@+id/otimet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:text="10 AM"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/i4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_baseline_access_time_filled_24"
+            android:tag="hospitals" />
+
+        <TextView
+            android:id="@+id/ctimet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:text="10 PM"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/i5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitStart"
+        android:src="@drawable/ic_baseline_local_offer_24"
+        android:tag="hospitals" />
+
+    <TextView
+        android:id="@+id/offerst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="20dp"
+        android:paddingLeft="10dp"
+        android:text="OFFERS"
+        android:textSize="18dp"
+        android:textStyle="bold|italic" />
+    </LinearLayout>
+
+</LinearLayout>

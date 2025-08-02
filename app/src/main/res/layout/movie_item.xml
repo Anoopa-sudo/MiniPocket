@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:layout_margin="20dp"
+    android:background="@drawable/bordercircle_grey"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/movie_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red_app_400"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:text="Movie Name"
+        android:gravity="center_horizontal" />
+    <ImageView
+        android:id="@+id/movie_poster"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_baseline_movie_filter_24" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/i2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_baseline_calendar_month_24"
+            android:tag="hospitals" />
+
+        <TextView
+            android:id="@+id/datet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:text="05-05-2021"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
